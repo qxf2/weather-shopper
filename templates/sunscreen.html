@@ -1,0 +1,51 @@
+{% extends "ws_base.html" %} 
+{% include "ws_cart.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <h2>Sunscreens</h2>
+            <span class="octicon octicon-info" data-toggle="popover" title="Your task"
+                data-content="Add two sunscreens to your cart. First, select the least expensive sunscreen that is SPF-50. For your second sunscreen, select the least expensive sunscreen that is SPF-30."></span>
+        </div>
+        <div class="row justify-content-center top-space-50">
+            <div class="text-center col-4">
+                <img src="https://via.placeholder.com/150" class="top-space-10"></img>
+                <p class="font-weight-bold top-space-10">Lotus Herbals Sunblock SPF-40</p>
+                <p>Price: Rs. 350</p>
+                <button class="btn btn-primary" onclick="addToCart('Lotus Herbals Sunblock SPF-40',350)">Add</button>
+            </div>
+            <div class="text-center col-4">
+                <img src="https://via.placeholder.com/150" class="top-space-10"></img>
+                <p class="font-weight-bold top-space-10">Neutrogena Ultra Sunblock SPF-50</p>
+                <p>Price: Rs. 289</p>
+                <button class="btn btn-primary" onclick="addToCart('Neutrogena Ultra Sunblock SPF-50',289)">Add</button>
+            </div>
+            <div class="text-center col-4">
+                <img src="https://via.placeholder.com/150" class="top-space-10"></img>
+                <p class="font-weight-bold top-space-10">Biotique Bio Sandalwood SPF-50</p>
+                <p>Price: Rs. 250</p>
+                <button class="btn btn-primary" onclick="addToCart('Biotique Bio Sandalwood SPF-50',250)">Add</button>
+            </div>
+        </div>
+        <hr>
+        <div class="row justify-content-center top-space-50">
+            <div class="text-center col-4">
+                <img src="https://via.placeholder.com/150" class="top-space-10"></img>
+                <p class="font-weight-bold top-space-10">Lakme Sun Expert SPF-30</p>
+                <p>Price: Rs. 160</p>
+                <button class="btn btn-primary" onclick="addToCart('Lakme Sun Expert SPF-30',160)">Add</button>
+            </div>
+            <div class="text-center col-4">
+                <img src="https://via.placeholder.com/150" class="top-space-10"></img>
+                <p class="font-weight-bold top-space-10">Glenmark La Shield Sunscreen spf-30</p>
+                <p>Price: Rs. 195</p>
+                <button class="btn btn-primary" onclick="addToCart('Glenmark La Shield Sunscreen spf-30',195)">Add</button>
+            </div>
+            <div class="text-center col-4">
+                <img src="https://via.placeholder.com/150" class="top-space-10"></img>
+                <p class="font-weight-bold top-space-10">VLCC Water Resistant Sunscreen SPF-30</p>
+                <p>Price: Rs. 140</p>
+                <button class="btn btn-primary" onclick="addToCart('VLCC Water Resistant Sunscreen SPF-30',140)">Add</button>
+            </div>
+        </div>
+{% endblock %}

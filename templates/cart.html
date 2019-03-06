@@ -1,0 +1,53 @@
+{% extends "ws_base.html" %}
+{% block content %}
+
+<div class="container top-space-50">
+    <div class="row justify-content-center">
+        <h2>Checkout</h2>
+        <span class="octicon octicon-info" data-toggle="popover" title="Your task"
+            data-content="Verify that the shopping cart looks correct. Then, fill out your payment details and submit the form."></span>
+    </div>
+    <div class="row justify-content-center top-space-50">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, value in cart_items.items() %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p class="justify-content-center h4 top-space-20" id="total">Total: Rupees {{ total_price }}</p>
+    </div>
+    <div class="row top-space-30">
+        <!--Src: https://stripe.com/docs/quickstart
+        Any random, syntactically valid email address (the more random, the better)
+        One of Stripe’s test card numbers, such as 4242 4242 4242 4242
+        Any three-digit CVC code
+        Any expiration date in the future
+        Any billing ZIP code, such as 12345
+        -->
+        <form action="/confirmation" method="POST">
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_test_TYooMQauvdEDq54NiTphI7jx"
+              data-amount = {{ (total_price*100) }} 
+              data-name="Stripe.com"
+              data-currency="INR"
+              data-description="Example charge"
+              data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+              data-locale="auto"
+              data-zip-code="true">
+            </script>
+          </form>
+    </div>
+</div>
+
+{% endblock %}

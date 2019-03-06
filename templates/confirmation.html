@@ -1,0 +1,21 @@
+{% extends "ws_base.html" %}
+
+{% block content %}
+<div class="container top-space-50">
+    <div class="row justify-content-center">
+        {% if flag == true %}
+        <h2>PAYMENT SUCCESS</h2>
+        {% else %}
+        <h2>PAYMENT FAILED</h2>
+        {% endif %}
+        <span class="octicon octicon-info" data-toggle="popover" title="Your task"
+            data-content="Verify if the payment was successful. The app is setup so there is a 5% chance that your payment failed."></span>
+    </div>
+    <div class="row justify-content-center top-space-50">
+        {% if flag == true %}
+        <p class="text-justify">Your payment was successful. You should receive a follow-up call from our sales team.</p>
+        {% else %}
+        <p class="text-justify">Oh, oh! Your payment did not go through. Please bang your head against a wall, curse the software gods and then try again.</p>
+        {% endif %}
+    </div>
+    {% endblock %}

@@ -1,0 +1,35 @@
+{% extends "ws_base.html" %} {% block content %}
+
+    <div class="container top-space-50">
+        <div class="row justify-content-center">
+            <h2>Current temperature</h2>
+            <span class="octicon octicon-info" data-toggle="popover" title="Your task" data-content="Shop for moisturizers if the weather is below 19 degrees. Shop for suncreens if the weather is above 34 degrees."></span>
+        </div>
+        <div class="row panel justify-content-center col-4 offset-4">
+            <div class="row justify-content-center headline" id="weather">
+                <script type="text/javascript">
+                    if (Math.random() < 0.5) {
+                        //Summer is 35 celcius or higher
+                        document.getElementById("weather").innerHTML = '<span id="temperature">' + Math.floor((Math.random() * 15 + 35)) + '<sup>&nbsp;&deg;C</sup></span>';
+                    } else {
+                        //Winter is 18 celcius or lower
+                        document.getElementById("weather").innerHTML = '<span id="temperature">' + Math.floor((Math.random() * 18 + 1)) + '<sup>&nbsp;&#8451;</sup></span>';
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="row justify-content-center top-space-20">
+            <div class="text-center col-4">
+                <h3>Moisturizers</h3>
+                <hr/>
+                <p class="text-justify">Don't let cold weather ruin your skin. Use your favourite moisturizer and keep your skin stay young.</p>
+                <a href="/moisturizer"><button class="btn btn-primary">Buy moisturizers</button></a>
+            </div>
+            <div class="text-center col-4 offset-4">
+                <h3>Sunscreens</h3>
+                <hr/>
+                <p class="text-justify">Treat your skin right. Don't leave your home without your favorite sunscreen. Say goodbye to sunburns.</p>
+                <a href="/sunscreen"><button class="btn btn-primary">Buy sunscreens</button></a>
+            </div>
+        </div>
+{% endblock %}
