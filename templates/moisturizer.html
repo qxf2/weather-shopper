@@ -14,10 +14,10 @@
             <img src="https://via.placeholder.com/150" class="top-space-10"></img>
             <p class="font-weight-bold top-space-10">{{ name }}</p>
             <p>Price: Rs. {{ price }}</p>
-            <button class="btn btn-primary" onclick="addToCart({{ name|safe }}, {{ price|safe }})">Add</button>
+            <button class="btn btn-primary" onclick="addToCart('{{name|safe}}',{{price|safe}})">Add</button>
         </div>
         {% endfor %}
-        <hr/>
+        <hr />
         {% endfor %}
     </div>
     <div class="row justify-content-center top-space-50">
@@ -27,7 +27,7 @@
             <img src="https://via.placeholder.com/150" class="top-space-10"></img>
             <p class="font-weight-bold top-space-10">{{ name }}</p>
             <p>Price: {{ price }}</p>
-            <button class="btn btn-primary" onclick=addToCart("{{ name|safe }}", "{{ price|safe }}")>Add</button>
+            <button class="btn btn-primary" onclick="addToCart('{{name|safe}}',{{price|safe}})">Add</button>
         </div>
         {% endfor %}
         {% endfor %}

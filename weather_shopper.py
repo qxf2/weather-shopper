@@ -20,10 +20,6 @@ def index():
 @app.route("/moisturizer")
 def moisturizer():
     "Return a list of moisturizers"
-    #create a list of dictionaries
-    #send them to the template
-    #keep images static
-    #modify template to read a list of dictionaries
     all_moisturizers = [{'Wilhelm Aloe Hydration Lotion':365},
     {'Emmanuel Aloe Vera Beauty Gel':299},
     {'Jose Intensive Care Aloe Body Lotion':216},
@@ -41,7 +37,18 @@ def moisturizer():
 @app.route("/sunscreen")
 def sunscreen():
     "Return a list of sunscreens"
-    return render_template('sunscreen.html')
+    all_sunscreens = [{'Robert Herbals Sunblock SPF-40':350},
+    {'Anatoly Ultra Sunblock SPF-50':289},
+    {'Gary Bio Sandalwood SPF-50':250},
+    {'Vladimir Sun Expert SPF-30':160},
+    {'Vishy La Shield Sunscreen spf-30':195},
+    {'Magnus Resistant Sunscreen SPF-30':140},
+    {'Paul Magnificient SPF-30':121},
+    {'Akiba Amazing SPF-50':222},
+    {'Vassily Brilliant SPF-30':116}]
+    sunscreens = random.sample(all_sunscreens,6)
+
+    return render_template('sunscreen.html', sunscreens=sunscreens)
 
 @app.route("/cart", methods=['GET', 'POST'])
 def submit_cart():
