@@ -20,7 +20,23 @@ def index():
 @app.route("/moisturizer")
 def moisturizer():
     "Return a list of moisturizers"
-    return render_template('moisturizer.html')
+    #create a list of dictionaries
+    #send them to the template
+    #keep images static
+    #modify template to read a list of dictionaries
+    all_moisturizers = [{'Wilhelm Aloe Hydration Lotion':365},
+    {'Emmanuel Aloe Vera Beauty Gel':299},
+    {'Jose Intensive Care Aloe Body Lotion':216},
+    {'Alexander Almond & Honey Moisturiser':360},
+    {'Max honey and almond moisturiser':195},
+    {'Mikhail Natural Almond Moisturizer':220},
+    {'Vassily Aloe Attack':199},
+    {'Mikhail Almond and Talc':353},
+    {'Tigran Aloe Isolani':215},
+    {'Boris Almond and Honey':128}]
+    moisturizers = random.sample(all_moisturizers,6)
+
+    return render_template('moisturizer.html', moisturizers=moisturizers)
 
 @app.route("/sunscreen")
 def sunscreen():

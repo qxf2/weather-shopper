@@ -1,4 +1,4 @@
-{% extends "ws_base.html" %} 
+{% extends "ws_base.html" %}
 {% include "ws_cart.html" %}
 {% block content %}
 <div class="container">
@@ -8,47 +8,29 @@
             data-content="Add two moisturizers to your cart. First, select the least expensive mositurizer that contains Aloe. For your second moisturizer, select the least expensive moisturizer that contains almond."></span>
     </div>
     <div class="row justify-content-center top-space-50">
+        {% for moisturizer in moisturizers[:3] %}
+        {% for name, price in moisturizer.items() %}
         <div class="text-center col-4">
             <img src="https://via.placeholder.com/150" class="top-space-10"></img>
-            <p class="font-weight-bold top-space-10">Nivea Aloe Hydration Body Lotion</p>
-            <p>Price: Rs. 365</p>
-            <button class="btn btn-primary" onclick="addToCart('Nivea Aloe Hydration Body Lotion',365)">Add</button>
+            <p class="font-weight-bold top-space-10">{{ name }}</p>
+            <p>Price: Rs. {{ price }}</p>
+            <button class="btn btn-primary" onclick="addToCart({{ name|safe }}, {{ price|safe }})">Add</button>
         </div>
-        <div class="text-center col-4">
-            <img src="https://via.placeholder.com/150" class="top-space-10"></img>
-            <p class="font-weight-bold top-space-10">WOW Aloe Vera Multipurpose Beauty Gel</p>
-            <p>Price: Rs. 299</p>
-            <button class="btn btn-primary"
-                onclick="addToCart('WOW Aloe Vera Multipurpose Beauty Gel',299)">Add</button>
-        </div>
-        <div class="text-center col-4">
-            <img src="https://via.placeholder.com/150" class="top-space-10"></img>
-            <p class="font-weight-bold top-space-10">Vaseline Intensive Care Aloe Body Lotion</p>
-            <p>Price: Rs. 216</p>
-            <button class="btn btn-primary"
-                onclick="addToCart('Vaseline Intensive Care Aloe Body Lotion',216)">Add</button>
-        </div>
+        {% endfor %}
+        <hr/>
+        {% endfor %}
     </div>
-    <hr>
     <div class="row justify-content-center top-space-50">
+        {% for moisturizer in moisturizers[3:6] %}
+        {% for name, price in moisturizer.items() %}
         <div class="text-center col-4">
             <img src="https://via.placeholder.com/150" class="top-space-10"></img>
-            <p class="font-weight-bold top-space-10">Onyx Care Almond & Honey Moisturiser</p>
-            <p>Price: Rs. 360</p>
-            <button class="btn btn-primary"
-                onclick="addToCart('Onyx Care Almond and Honey Moisturiser',360)">Add</button>
+            <p class="font-weight-bold top-space-10">{{ name }}</p>
+            <p>Price: {{ price }}</p>
+            <button class="btn btn-primary" onclick=addToCart("{{ name|safe }}", "{{ price|safe }}")>Add</button>
         </div>
-        <div class="text-center col-4">
-            <img src="https://via.placeholder.com/150" class="top-space-10"></img>
-            <p class="font-weight-bold top-space-10">Zever's honey and almond moisturiser</p>
-            <p>Price: Rs. 195</p>
-            <button class="btn btn-primary" onclick="addToCart('Zevers honey and almond moisturiser',195)">Add</button>
-        </div>
-        <div class="text-center col-4">
-            <img src="https://via.placeholder.com/150" class="top-space-10"></img>
-            <p class="font-weight-bold top-space-10">Khadi Natural Almond Moisturizer</p>
-            <p>Price: Rs. 220</p>
-            <button class="btn btn-primary" onclick="addToCart('Khadi Natural Almond Moisturizer',220)">Add</button>
-        </div>
+        {% endfor %}
+        {% endfor %}
     </div>
+</div>
 {% endblock %}
