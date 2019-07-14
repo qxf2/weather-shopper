@@ -20,16 +20,16 @@ def index():
 @app.route("/moisturizer")
 def moisturizer():
     "Return a list of moisturizers"
-    all_moisturizers = [{'Wilhelm Aloe Hydration Lotion':365},
-    {'Emmanuel Aloe Vera Beauty Gel':299},
-    {'Jose Intensive Care Aloe Body Lotion':216},
-    {'Alexander Almond & Honey Moisturiser':360},
-    {'Max honey and almond moisturiser':195},
-    {'Mikhail Natural Almond Moisturizer':220},
-    {'Vassily Aloe Attack':199},
-    {'Mikhail Almond and Talc':353},
-    {'Tigran Aloe Isolani':215},
-    {'Boris Almond and Honey':128}]
+    all_moisturizers = [{'Wilhelm Aloe Hydration Lotion':{'price':365,'img':'moisturizer_wilhelm.png'}},
+    {'Emmanuel Aloe Vera Beauty Gel':{'price':299,'img':'moisturizer_emmanuel.png'}},
+    {'Jose Intensive Care Aloe Body Lotion':{'price':216,'img':'moisturizer_jose.png'}},
+    {'Alexander Almond & Honey Moisturiser':{'price':360,'img':'moisturizer_alexander.png'}},
+    {'Max honey and almond moisturiser':{'price':195,'img':'moisturizer_max.png'}},
+    {'Mikhail Natural Almond Moisturizer':{'price':220,'img':'moisturizer_mikhail.png'}},
+    {'Vassily Aloe Attack':{'price':199,'img':'moisturizer_vassily.png'}},
+    {'Mikhail Almond and Talc':{'price':353,'img':'moisturizer_tal.png'}},
+    {'Tigran Aloe Isolani':{'price':215,'img':'moisturizer_tigran.png'}},
+    {'Boris Almond and Honey':{'price':128,'img':'moisturizer_boris.png'}}]
     moisturizers = random.sample(all_moisturizers,6)
 
     return render_template('moisturizer.html', moisturizers=moisturizers)
