@@ -37,15 +37,15 @@ def moisturizer():
 @app.route("/sunscreen")
 def sunscreen():
     "Return a list of sunscreens"
-    all_sunscreens = [{'Robert Herbals Sunblock SPF-40':350},
-    {'Anatoly Ultra Sunblock SPF-50':289},
-    {'Gary Bio Sandalwood SPF-50':250},
-    {'Vladimir Sun Expert SPF-30':160},
-    {'Vishy La Shield Sunscreen spf-30':195},
-    {'Magnus Resistant Sunscreen SPF-30':140},
-    {'Paul Magnificient SPF-30':121},
-    {'Akiba Amazing SPF-50':222},
-    {'Vassily Brilliant SPF-30':116}]
+    all_sunscreens = [{'Robert Herbals Sunblock SPF-40':{'price':350,'img':'sunscreen_robert.png'}},
+    {'Anatoly Ultra Sunblock SPF-50':{'price':289,'img':'sunscreen_anatoly.png'}},
+    {'Gary Bio Sandalwood SPF-50':{'price':250,'img':'sunscreen_gary.png'}},
+    {'Vladimir Sun Expert SPF-30':{'price':160,'img':'sunscreen_vladimir.png'}},
+    {'Vishy La Shield Sunscreen spf-30':{'price':195,'img':'sunscreen_vishy.png'}},
+    {'Magnus Resistant Sunscreen SPF-30':{'price':140,'img':'sunscreen_magnus.png'}},
+    {'Paul Magnificient SPF-30':{'price':121,'img':'sunscreen_paul.png'}},
+    {'Akiba Amazing SPF-50':{'price':222,'img':'sunscreen_akiba.png'}},
+    {'Vassily Brilliant SPF-30':{'price':116,'img':'sunscreen_vassily.png'}}]
     sunscreens = random.sample(all_sunscreens,6)
 
     return render_template('sunscreen.html', sunscreens=sunscreens)

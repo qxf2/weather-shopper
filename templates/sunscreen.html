@@ -9,11 +9,11 @@
     </div>
     <div class="row justify-content-center top-space-50">
         {% for sunscreen in sunscreens[:3] %}
-        {% for name, price in sunscreen.items() %}
+        {% for name, details in sunscreen.items() %}
         <div class="text-center col-4">
-            <img src="https://via.placeholder.com/150" class="top-space-10"></img>
+            <img src="{{ url_for('static', filename= 'img/sunscreens/' + details['img']) }}" class="top-space-10" width="150px" height="150px"></img>
             <p class="font-weight-bold top-space-10">{{ name }}</p>
-            <p>Price: Rs. {{ price }}</p>
+            <p>Price: Rs. {{ details['price'] }}</p>
             <button class="btn btn-primary" onclick="addToCart('{{name|safe}}',{{price|safe}})">Add</button>
         </div>
         {% endfor %}
@@ -22,11 +22,11 @@
     </div>
     <div class="row justify-content-center top-space-50">
         {% for sunscreen in sunscreens[3:6] %}
-        {% for name, price in sunscreen.items() %}
+        {% for name, details in sunscreen.items() %}
         <div class="text-center col-4">
-            <img src="https://via.placeholder.com/150" class="top-space-10"></img>
+            <img src="{{ url_for('static', filename= 'img/sunscreens/' + details['img']) }}" class="top-space-10" width="150px" height="150px"></img>
             <p class="font-weight-bold top-space-10">{{ name }}</p>
-            <p>Price: {{ price }}</p>
+            <p>Price: {{ details['price'] }}</p>
             <button class="btn btn-primary" onclick="addToCart('{{name|safe}}',{{price|safe}})">Add</button>
         </div>
         {% endfor %}
