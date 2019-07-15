@@ -14,7 +14,7 @@
                 <img src="{{ url_for('static', filename= 'img/moisturizers/' + details['img']) }}" class="top-space-10" width="150px" height="150px"></img>
                 <p class="font-weight-bold top-space-10">{{ name }}</p>
                 <p>Price: Rs. {{ details['price'] }}</p>
-                <button class="btn btn-primary" onclick="addToCart('{{name|safe}}',{{price|safe}})">Add</button>
+                <button class="btn btn-primary" onclick="addToCart('{{name|safe}}',{{details['price']|safe}})">Add</button>
             </div>
         {% endfor %}
         <hr />
@@ -27,7 +27,7 @@
             <img src="{{ url_for('static', filename= 'img/moisturizers/' + details['img']) }}" class="top-space-10" width="150px" height="150px"></img>
             <p class="font-weight-bold top-space-10">{{ name }}</p>
             <p>Price: {{ details['price'] }}</p>
-            <button class="btn btn-primary" onclick="addToCart('{{name|safe}}',{{price|safe}})">Add</button>
+            <button class="btn btn-primary" onclick="addToCart('{{name|safe}}',{{details['price']|safe}})">Add</button>
         </div>
         {% endfor %}
         {% endfor %}
