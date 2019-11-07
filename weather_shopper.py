@@ -15,7 +15,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     "Return the home page"
-    return render_template('index.html')
+    return render_template('index.html',title='Current Temperature')
 
 @app.route("/moisturizer")
 def moisturizer():
@@ -32,7 +32,7 @@ def moisturizer():
     {'Boris Almond and Honey':{'price':128,'img':'moisturizer_boris.png'}}]
     moisturizers = random.sample(all_moisturizers,6)
 
-    return render_template('moisturizer.html', moisturizers=moisturizers)
+    return render_template('moisturizer.html', moisturizers=moisturizers,title='The Best Moisturizers in the World!')
 
 @app.route("/sunscreen")
 def sunscreen():
@@ -48,7 +48,7 @@ def sunscreen():
     {'Vassily Brilliant SPF-30':{'price':116,'img':'sunscreen_vassily.png'}}]
     sunscreens = random.sample(all_sunscreens,6)
 
-    return render_template('sunscreen.html', sunscreens=sunscreens)
+    return render_template('sunscreen.html', sunscreens=sunscreens,title='The Best Sunscreens in the World!')
 
 @app.route("/cart", methods=['GET', 'POST'])
 def submit_cart():
@@ -61,13 +61,13 @@ def submit_cart():
         app.logger.info(value)
     app.logger.info(cart_items)
 
-    return render_template('cart.html', cart_items=cart_items, total_price=total_price)
+    return render_template('cart.html', cart_items=cart_items, total_price=total_price,title='Cart Items')
 
 @app.route("/confirmation", methods=['POST'])
 def confirmation():
     "Confirm the payments"
     result = True if random.uniform(0,1) <0.95 else False
-    return render_template('confirmation.html', flag=result)
+    return render_template('confirmation.html', flag=result,title='Confirmation')
 
 
 #----START OF SCRIPT
