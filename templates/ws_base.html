@@ -1,7 +1,11 @@
 <html>
 
 <head>
-    <title>The best moisturizers in the world!</title>
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>The best moisturizer!</title>
+        {% endif %}
     <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
