@@ -1,11 +1,20 @@
 <html>
 
 <head>
-        {% if title %}
-        <title>{{ title }}</title>
-        {% else %}
-        <title>The best moisturizer!</title>
-        {% endif %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R28LRN90JF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-R28LRN90JF');
+    </script>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>The best moisturizer!</title>
+    {% endif %}
     <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -15,14 +24,16 @@
 </head>
 
 <body>
-    
+
     {% block content %} {% endblock %}
 
     <div class="row justify-content-center top-space-50">
-            <p class="ws_copyright">&copy; <a href="https://qxf2.com/?utm_source=footer&utm_medium=click&utm_campaign=Weather%20shopper">Qxf2 Services</a> 2018 -
-                <script>document.write(new Date().getFullYear())</script>
-            </p>
-        </div>
+        <p class="ws_copyright">&copy; <a
+                href="https://qxf2.com/?utm_source=footer&utm_medium=click&utm_campaign=Weather%20shopper">Qxf2
+                Services</a> 2018 -
+            <script>document.write(new Date().getFullYear())</script>
+        </p>
+    </div>
     </div>
 
     <!--START OF JS-->
