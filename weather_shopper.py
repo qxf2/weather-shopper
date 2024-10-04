@@ -6,7 +6,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import redirect, url_for
-from flask import _request_ctx_stack
+#from flask import _request_ctx_stack
 from flask import jsonify
 import random 
 
@@ -69,6 +69,11 @@ def confirmation():
     result = True if random.uniform(0,1) <0.95 else False
     return render_template('confirmation.html', flag=result,title='Confirmation')
 
+
+@app.route("/about")
+def about():
+    "Return about page"
+    return render_template('about.html')
 
 #----START OF SCRIPT
 if __name__=='__main__':
