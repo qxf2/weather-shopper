@@ -28,10 +28,16 @@
     {% block content %} {% endblock %}
 
     <div class="row justify-content-center top-space-50">
-        <p class="ws_copyright">&copy; <a
-                href="https://qxf2.com/?utm_source=footer&utm_medium=click&utm_campaign=Weather%20shopper">Qxf2
-                Services</a> 2018 -
+        <p class="ws_copyright">
+            {% if request.path == '/about' %}
+                <a href="/">Home</a>
+            {% else %}
+                <a href="/about">About</a>
+            {% endif %}
+            &nbsp;&nbsp; &copy; <a href="https://qxf2.com/?utm_source=footer&utm_medium=click&utm_campaign=Weather%20shopper">
+                Qxf2 Services</a> 2018 -
             <script>document.write(new Date().getFullYear())</script>
+            
         </p>
     </div>
     </div>
